@@ -1,0 +1,24 @@
+$num=[]
+$num[0]=2
+def addPrime(n)
+  3.step(n,2) { |temp|$num<<temp if isPrime(temp) }
+  end
+def isPrime(n)
+  j=2
+  flag=0
+  while(j*j<=n)
+    if n%j==0
+      flag=1
+      break
+    end
+    j=j+1
+  end
+  if flag==0
+    return true
+  else
+    return false
+  end
+
+end
+addPrime(50)
+print $num.join(" "), "\n"

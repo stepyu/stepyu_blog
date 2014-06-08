@@ -1,0 +1,17 @@
+def prime(num)
+  result=Array.new
+  1.upto num do |temp|
+    flag=0
+    2.upto (temp-1)do |tempInner|
+      if temp%tempInner==0
+        flag=1
+        break
+      end
+    end
+    if flag==0
+      result.push(temp)
+    end
+  end
+  print result
+end
+prime(50)

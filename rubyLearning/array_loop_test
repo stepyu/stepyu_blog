@@ -1,0 +1,17 @@
+def main (port)
+result=Array.new
+  j=0
+  0.upto (port.size()-1)do |i|
+    if port[i]!="&"
+      result[j]=Integer(port[i])
+      j=j+1
+    elsif port[i]=="&"&&port[i+1]=="&"
+      0.upto(Integer(port[i+2])-Integer(port[i-1])-2)do
+        result[j]=Integer(result[j-1])+1
+        j=j+1
+      end
+    end
+  end
+  print result
+end
+main("1&&5&6")

@@ -1,0 +1,31 @@
+str="Ruby is an object oriented programming language"
+arr=str.split
+print arr.join(","),"\n"
+print arr.sort.join(","),"\n"
+print arr.sort{|x,y| x.downcase<=>y.downcase}.join(","),"\n"
+char=[]
+count=[]
+str.each_char do |c|
+  char.include?(c)?count[char.index(c)]+=1:(char<<c;count[char.index(c)]=1)
+end
+char.each do |i|
+  print i
+  count[char.index(i)].times{print "*"}
+  print "\n"
+end
+=begin
+char=[]
+count=[]
+str.each_char do |c|
+char.include?(c) ? count[char.index(c)] += 1 : char<<c;count[char.size-1]=1
+end
+char.each {|i|print i; count[char.index(i)].times{print "*"}; print "\n"}
+=end
+newArry=str.split
+anotherArray=[]
+newArry.each do |char|
+  char[0]=char[0].upcase
+  anotherArray<<char
+  print char," "
+end
+print anotherArray.join(",")
